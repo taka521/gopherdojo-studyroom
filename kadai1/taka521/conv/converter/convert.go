@@ -31,6 +31,9 @@ func Convert(filePath string, to constant.Extension) error {
 	if err != nil {
 		return err
 	}
+	defer func() {
+		_ = dest.Close()
+	}()
 
 	// 画像変換を実行
 	return encoders[to](dest, img)
