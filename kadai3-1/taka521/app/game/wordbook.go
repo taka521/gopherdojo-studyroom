@@ -1,4 +1,4 @@
-package app
+package game
 
 import (
 	"math/rand"
@@ -13,9 +13,19 @@ func (w Word) Equals(v string) bool {
 	return strings.EqualFold(string(w), v)
 }
 
+type WordBook interface {
+	Get() Word
+}
+
+func GetWordBook() WordBook {
+	return &wordbook{}
+}
+
+type wordbook struct{}
+
 var wOnce sync.Once
 
-func GetWord() Word {
+func (w *wordbook) Get() Word {
 	wOnce.Do(func() {
 		rand.Seed(time.Now().UnixNano())
 	})
