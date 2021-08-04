@@ -1,3 +1,5 @@
+//go:generate gomockhandler -config=../../gomockhandler.json -source=$GOFILE -destination=./mock/mock_$GOFILE -package=mock
+
 package game
 
 import "context"

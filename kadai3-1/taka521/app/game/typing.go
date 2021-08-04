@@ -1,3 +1,6 @@
+//go:generate gomockhandler -config=../../gomockhandler.json -destination=./mock/mock_reader.go -package=mock io Reader
+//go:generate gomockhandler -config=../../gomockhandler.json -destination=./mock/mock_writer.go -package=mock io Writer
+
 package game
 
 import (
