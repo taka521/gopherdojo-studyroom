@@ -2,13 +2,16 @@ package pdown
 
 import (
 	"errors"
+	"fmt"
 	"net/http"
+	"path/filepath"
 	"strconv"
 )
 
 const (
 	hAcceptRanges  = "Accept-Ranges"
 	hContentLength = "Content-Length"
+	hRange         = "Range"
 )
 
 // getSizeAndRangeSupport はダウンロード対象のファイルサイズ取得および、Range アクセス可能であるかを検証します。
@@ -21,12 +24,12 @@ func getSizeAndRangeSupport(url string) (size int64, err error) {
 	// ヘッダーだけ欲しいので HEAD アクセス
 	req, err := http.NewRequest("HEAD", url, nil)
 	if err != nil {
-		return
+		return 0, fmt.Errorf("リクエストの作成に失敗しました: %w", err)
 	}
 
 	res, err := http.DefaultClient.Do(req)
 	if err != nil {
-		return
+		return 0, fmt.Errorf("リクエストに失敗しました: %w", err)
 	}
 
 	acceptRanges, supported := res.Header[hAcceptRanges]
@@ -36,4 +39,8 @@ func getSizeAndRangeSupport(url string) (size int64, err error) {
 
 	size, err = strconv.ParseInt(res.Header[hContentLength][0], 10, 64)
 	return
+}
+
+func getFileName(path string) string {
+	return filepath.Base(path)
 }
