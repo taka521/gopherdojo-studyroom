@@ -1,5 +1,4 @@
-//go:generate gomockhandler -config=../../gomockhandler.json -destination=./mock/mock_reader.go -package=mock io Reader
-//go:generate gomockhandler -config=../../gomockhandler.json -destination=./mock/mock_writer.go -package=mock io Writer
+//go:generate gomockhandler -config=../../gomockhandler.json -destination=./mock/mock_io.go -package=mock io Reader,Writer
 
 package game
 

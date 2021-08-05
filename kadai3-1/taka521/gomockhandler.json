@@ -1,45 +1,34 @@
 {
 	"mocks": {
-		"app/game/mock/mock_reader.go": {
-			"checksum": "tYARHcmSva1FN+QUrD71NA==",
-			"source_checksum": "AAAAAAAAAAAAAAAAAAAAAA==",
-			"mode": "REFLECT_MODE",
-			"reflect_mode_runner": {
-				"package_name": "io",
-				"interfaces": "Reader",
-				"destination": "app/game/mock/mock_reader.go",
-				"package": "mock"
-			}
-		},
-		"app/game/mock/mock_wordbook.go": {
-			"checksum": "aZl23kKcsfq10HO99pa0OA==",
-			"source_checksum": "G7LpTNUi1BF0m41Ap/NPXQ==",
-			"mode": "SOURCE_MODE",
-			"source_mode_runner": {
-				"source": "app/game/wordbook.go",
-				"destination": "app/game/mock/mock_wordbook.go",
-				"package": "mock"
-			}
-		},
-		"app/game/mock/mock_iface.go": {
-			"checksum": "LquAzWpdHu4EbXxYIy6tKA==",
-			"source_checksum": "iPF1Mbn1+0d1ywjaHayVVA==",
+		"app/game/iface_mock.go": {
+			"checksum": "6/QCEJ8z1F0/ezSKSEi34A==",
+			"source_checksum": "ByyLDStkGrty2RBf9AuCEw==",
 			"mode": "SOURCE_MODE",
 			"source_mode_runner": {
 				"source": "app/game/iface.go",
-				"destination": "app/game/mock/mock_iface.go",
-				"package": "mock"
+				"destination": "app/game/iface_mock.go",
+				"package": "game"
 			}
 		},
-		"app/game/mock/mock_writer.go": {
-			"checksum": "r65pM+f+LxzyY6KATRoELA==",
+		"app/game/mock/mock_io.go": {
+			"checksum": "wRd3DO/fuFcB2aZgK2ecbg==",
 			"source_checksum": "AAAAAAAAAAAAAAAAAAAAAA==",
 			"mode": "REFLECT_MODE",
 			"reflect_mode_runner": {
 				"package_name": "io",
-				"interfaces": "Writer",
-				"destination": "app/game/mock/mock_writer.go",
+				"interfaces": "Reader,Writer",
+				"destination": "app/game/mock/mock_io.go",
 				"package": "mock"
+			}
+		},
+		"app/game/wordbook_mock.go": {
+			"checksum": "m8qez+K8yv4qS6/IDPzcCA==",
+			"source_checksum": "He5vdnNyiG41Dd8b3YIcfA==",
+			"mode": "SOURCE_MODE",
+			"source_mode_runner": {
+				"source": "app/game/wordbook.go",
+				"destination": "app/game/wordbook_mock.go",
+				"package": "game"
 			}
 		}
 	}

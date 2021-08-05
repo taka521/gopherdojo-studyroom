@@ -1,4 +1,4 @@
-//go:generate gomockhandler -config=../../gomockhandler.json -source=$GOFILE -destination=mock/mock_$GOFILE -package=mock
+//go:generate gomockhandler -config=../../gomockhandler.json -source=$GOFILE -destination=wordbook_mock.go -package=$GOPACKAGE
 
 package game
 
