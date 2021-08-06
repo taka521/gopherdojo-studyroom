@@ -24,4 +24,4 @@ $ ./pdown.exe <DLディレクトリ> <URL>
 
 ## 参考にした実装
 
-* https://github.com/jacklin293/golang-parallel-download-with-accept-ranges
+* https://github.com/Code-Hex/pget
